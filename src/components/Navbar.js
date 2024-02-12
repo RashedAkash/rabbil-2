@@ -11,6 +11,7 @@ const Navbar = () => {
         <li><Link href="client">client</Link></li>
         <li><Link href="server">server</Link></li>
         <li><Link href="props">Props</Link></li>
+        <li><Link href="dashboard">Dashboard</Link></li>
       </ul>
     </div>
   );
