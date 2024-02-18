@@ -30,7 +30,9 @@ const page = async () => {
         width={500}
         height={500}
         alt="free"
+        layout="responsive"
       />
+      
     </div>
   );
 };

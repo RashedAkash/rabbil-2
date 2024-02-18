@@ -1,5 +1,11 @@
-import Client from '@/components/Client';
-import React from 'react';
+import dynamic from "next/dynamic";
+
+const Client = dynamic(
+  () => import("@/components/Client"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
 
 const page = () => {
   return (
