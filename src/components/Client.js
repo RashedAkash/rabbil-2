@@ -13,7 +13,8 @@ const Client = () => {
   return (
     <div>
       <h1>Client</h1>
-      <h1>{JSON.stringify(user) }</h1>
+      <h1>{JSON.stringify(user)}</h1>
+      
     </div>
   );
 };
