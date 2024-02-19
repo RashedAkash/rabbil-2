@@ -13,3 +13,9 @@ export const POST = async (req, res) => {
   const users = await req.json()
   return NextResponse.json(users)
 }
+
+export const PUT = async (req, res) => {
+  const formData = await req.formData()
+  const name =  formData.get('name')
+  return NextResponse.json(name)
+}
