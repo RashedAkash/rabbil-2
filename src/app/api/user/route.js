@@ -7,3 +7,9 @@ export const GET = async (req, res) => {
   const city = searchParams.get('city');
   return NextResponse.json({id: id, name:name,city:city})
 }
+
+
+export const POST = async (req, res) => {
+  const users = await req.json()
+  return NextResponse.json(users)
+}
