@@ -1,21 +1,16 @@
-import { NextResponse } from "next/server"
-
-export const GET = async (req, res) => {
-  const { searchParams } = new URL(req.url)
-  const id = searchParams.get('id')
-  const name = searchParams.get('name')
-  const city = searchParams.get('city');
-  return NextResponse.json({id: id, name:name,city:city})
-}
-
+import { PrismaClient } from "@prisma/client";
+import { NextResponse } from "next/server";
 
 export const POST = async (req, res) => {
-  const users = await req.json()
-  return NextResponse.json(users)
-}
+  const { searchParams } = new URL(req.url);
+  const id = parseInt(searchParams.get("id"));
+  const reqBody = await req.json()
+  const prisma = new PrismaClient()
+  const result = await prisma.user.create({
+    data: reqBody
+  });
+   
 
-export const PUT = async (req, res) => {
-  const formData = await req.formData()
-  const name =  formData.get('name')
-  return NextResponse.json(name)
-}
+    return NextResponse.json(result);
+  
+};
